@@ -1,0 +1,339 @@
+/* ==========================================
+   1. RESET & VARIABLES
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --primary-green: #2ecc71;
+    --dark-green: #1b4d3e;
+    --light-bg: #f4f7f6;
+    --glass-bg: rgba(255, 255, 255, 0.45);
+    --glass-border: rgba(255, 255, 255, 0.25);
+    --text-dark: #2c3e50;
+    --text-light: #7f8c8d;
+}
+
+body {
+    background: linear-gradient(135deg, #eef5f3 0%, #e2ede9 100%);
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+/* ==========================================
+   2. FIXED DESKTOP NAVBAR
+   ========================================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10%;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--glass-border);
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--dark-green);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo i, .logo span { color: var(--primary-green); }
+
+.nav-links {
+    display: flex;
+    gap: 40px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.nav-links a.active, .nav-links a:hover {
+    color: var(--primary-green);
+}
+
+.btn-login {
+    text-decoration: none;
+    padding: 12px 30px;
+    background: var(--dark-green);
+    color: white;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.btn-login:hover {
+    background: var(--primary-green);
+}
+
+/* ==========================================
+   3. PERFECT FLEX HERO SECTION
+   ========================================== */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 100px 10% 0 10%;
+}
+
+.hero-container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+/* වම් පැත්තේ Text කොටස */
+.hero-left-text {
+    flex: 1;
+    max-width: 55%;
+}
+
+.badge {
+    background: rgba(46, 204, 113, 0.15);
+    color: var(--dark-green);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 25px;
+}
+
+.hero-left-text h1 {
+    font-size: 52px;
+    font-weight: 700;
+    color: var(--dark-green);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.highlight { color: var(--primary-green); }
+
+.hero-left-text p {
+    color: var(--text-light);
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 40px;
+}
+
+.hero-btns {
+    display: flex;
+    gap: 20px;
+}
+
+.hero-btns a {
+    text-decoration: none;
+    padding: 14px 35px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-primary { background: var(--primary-green); color: white; }
+.btn-primary:hover { background: var(--dark-green); }
+
+.btn-secondary { color: var(--dark-green); border: 2px solid var(--dark-green); }
+.btn-secondary:hover { background: var(--dark-green); color: white; }
+
+/* දකුණු පැත්තේ රවුම සහ Icon කොටස */
+.hero-right-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 45%;
+}
+
+.glass-sphere {
+    width: 320px;
+    height: 320px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 2px solid var(--glass-border);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+}
+
+.visual-brain-icon {
+    font-size: 90px;
+    color: var(--primary-green);
+}
+
+/* ==========================================
+   4. STATISTICS SECTION
+   ========================================== */
+.stats-section {
+    background: #113329;
+    color: white;
+    padding: 80px 10%;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stat-box {
+    flex: 1;
+    text-align: center;
+}
+
+.stat-box h2 {
+    font-size: 56px;
+    font-weight: 700;
+    color: var(--primary-green);
+    margin-bottom: 10px;
+}
+
+.stat-box p {
+    font-size: 16px;
+    color: #a3c1b8;
+    letter-spacing: 0.5px;
+}
+
+/* ==========================================
+   5. AUTHENTICATION PAGES (LOGIN & REGISTER)
+   ========================================== */
+.auth-wrapper {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #eef5f3 0%, #e2ede9 100%);
+    padding: 20px;
+}
+
+.auth-card {
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    width: 100%;
+    max-width: 450px;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.auth-logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--dark-green);
+    margin-bottom: 20px;
+}
+.auth-logo i, .auth-logo span { color: var(--primary-green); }
+
+.auth-card h2 {
+    font-size: 26px;
+    color: var(--dark-green);
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.auth-subtitle {
+    font-size: 14px;
+    color: var(--text-light);
+    margin-bottom: 30px;
+}
+
+/* Input Fields Design */
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-light);
+    font-size: 16px;
+}
+
+.input-group input, .input-group select {
+    width: 100%;
+    padding: 14px 15px 14px 45px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    font-size: 15px;
+    color: var(--text-dark);
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-group input:focus, .input-group select:focus {
+    border-color: var(--primary-green);
+    background: #fff;
+    box-shadow: 0 0 10px rgba(46, 204, 113, 0.1);
+}
+
+/* Auth Button */
+.btn-auth {
+    width: 100%;
+    padding: 14px;
+    background: var(--dark-green);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.btn-auth:hover {
+    background: var(--primary-green);
+}
+
+.auth-footer {
+    margin-top: 25px;
+}
+
+.auth-footer p {
+    font-size: 14px;
+    color: var(--text-dark);
+}
+
+.auth-footer a {
+    color: var(--primary-green);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.auth-footer a:hover {
+    color: var(--dark-green);
+}
