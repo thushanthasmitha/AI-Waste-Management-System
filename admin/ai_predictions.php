@@ -50,15 +50,15 @@ $result = mysqli_query($conn, $query);
                     // Direct mapping using exact column 'reported_at'
                     $reported_date = (!empty($row['reported_at'])) ? date('Y-m-d H:i', strtotime($row['reported_at'])) : 'N/A';
                     
-                    // Report ID එක මත පදනම්ව Dynamic Input Values සැකසීම
+                    
                     $id = (int)$row['id'];
                     if ($id % 2 != 0) {
-                        // High Risk Cases (75% - 96% අතර එකිනෙකට වෙනස් values)
+                        
                         $days = 4 + ($id % 3);
                         $fill = 75 + (($id * 7) % 20);
                         $waste = 40.0 + (($id * 5) % 25);
                     } else {
-                        // Normal Cases (0% - 35% අතර එකිනෙකට වෙනස් values)
+                        
                         $days = 1 + ($id % 2);
                         $fill = 15 + (($id * 4) % 25);
                         $waste = 10.0 + (($id * 3) % 15);
